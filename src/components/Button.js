@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ increment, onClickFunction }) => {
+const Button = ({ increment, onClickFunction, id }) => {
 	const handleClick = () => {
 		onClickFunction(increment);
 	};
@@ -8,8 +8,10 @@ const Button = ({ increment, onClickFunction }) => {
 		return <button onClick={handleClick}>{increment}</button>;
 	} else if (increment > 0) {
 		return <button onClick={handleClick}>+{increment}</button>;
-	} else {
+	} else if (id === "result") {
 		return <button onClick={handleClick}>Reset</button>;
+	} else {
+		return <button onClick={handleClick}>Save</button>;
 	}
 };
 
